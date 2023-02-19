@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Cow
   - UIBar
+  - Projectile
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -99,4 +99,9 @@ public class Cow : MonoBehaviour
     {
         is_captured = false;
     }
+
+    public bool IsCaptured()
+    {
+        return is_captured;
+    }
 }

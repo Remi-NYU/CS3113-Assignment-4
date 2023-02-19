@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Cow : MonoBehaviour
 {
+
+    Rigidbody2D _rigidbody;
     // Falling stuff
     public float space_unit = 0.02f;
     public int fall_speed = 1;
@@ -25,6 +27,7 @@ public class Cow : MonoBehaviour
     {
         normal_height = transform.position.y;
         initial_rotation = transform.rotation;
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
@@ -45,12 +48,12 @@ public class Cow : MonoBehaviour
         {
             time_accumulator += (int)(Time.deltaTime * 1000);
             Vector3 displacement = new Vector3(0, fall_speed, 0) * (time_accumulator / time_unit) * space_unit;
-            transform.position = transform.position - displacement;
+            _rigidbody.MovePosition(transform.position - displacement);
             time_accumulator = time_accumulator % time_unit;
         }
         else
         {
-            transform.position = new Vector3(transform.position.x, normal_height, 0);
+            _rigidbody.MovePosition(new Vector3(transform.position.x, normal_height, 0));
         }
         walking_timer += Time.deltaTime;
         if (walking_timer >= walking_interval)
@@ -60,19 +63,19 @@ public class Cow : MonoBehaviour
             transform.rotation = initial_rotation;
             if (rng == 1)
             {
-                transform.position = transform.position + new Vector3(space_unit * 10, 0, 0);
+                _rigidbody.MovePosition(transform.position + new Vector3(space_unit * 10, 0, 0));
             }
             else if (rng == 2)
             {
                 transform.Rotate(new Vector3(0, 180, 0));
-                transform.position = transform.position + new Vector3(-space_unit * 10, 0, 0);
+                _rigidbody.MovePosition(transform.position + new Vector3(-space_unit * 10, 0, 0));
             }
         }
     }
 
     void Captured()
     {
-        transform.position = captor_transform.position + captor_offset;
+        _rigidbody.MovePosition(captor_transform.position + captor_offset);
     }
 
     //

@@ -10,9 +10,6 @@ public class EnemySpawner1 : MonoBehaviour
     public GameObject enemy3PreFab;
     public GameObject enemy4PreFab;
 
-    public string levelName = "Level 1";
-
-
     IEnumerator Start()
     {
         yield return new WaitForSeconds(3f);

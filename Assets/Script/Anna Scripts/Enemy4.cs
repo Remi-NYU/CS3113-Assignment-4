@@ -1,20 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class Enemy1 : MonoBehaviour
+
+public class Enemy4 : MonoBehaviour
 {
     Rigidbody2D _rigidbody2D;
 
-    // Pause time when initially entering
-    public float initialDelay = 2f;
-    private float stoppingPointY;
-    private bool stopped = false;
-
-    // cow related
     private Cow[] cows;
     private bool carryingCow = false;
     private Cow chosenCow;
-
 
     void Start()
     {
@@ -29,26 +23,13 @@ public class Enemy1 : MonoBehaviour
         while (chosenCow.IsCaptured()){
             chosenCow = cows[Random.Range(0, cows.Length)];
         }
-        stoppingPointY = transform.position.y - 2;
-    }
 
+        
+    }
 
     void Update()
     {
-        //initial movement
-        if (!stopped){
-            if (transform.position.y <= stoppingPointY){
-                initialDelay -= Time.deltaTime;
-                if (initialDelay <= 0){
-                    stopped = true;
-                }
-            }
-            else{
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x, stoppingPointY), 0.0008f);
-            }
-        }
-        // look for cow
-        else if(!carryingCow){
+        if(!carryingCow){
             while (chosenCow.IsCaptured()){
             chosenCow = cows[Random.Range(0, cows.Length)];
             }
@@ -73,7 +54,4 @@ public class Enemy1 : MonoBehaviour
         }
 
     }
-
 }
-
- 

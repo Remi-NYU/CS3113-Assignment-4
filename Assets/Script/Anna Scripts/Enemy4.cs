@@ -6,7 +6,7 @@ public class Enemy4 : MonoBehaviour
 {
     Rigidbody2D _rigidbody2D;
 
-    private Cow[] cows;
+    private List<Cow> cows;
     private bool carryingCow = false;
     private Cow chosenCow;
 
@@ -15,13 +15,15 @@ public class Enemy4 : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         // Get all cows
         GameObject[] temp = GameObject.FindGameObjectsWithTag("Cow");
+        cows = new List<Cow>();
         for (int i = 0; i < temp.Length; i++){
-            cows[i] = temp[i].GetComponent<Cow>();
+            Cow tempCow = temp[i].GetComponent<Cow>();
+            cows.Add(tempCow);
         }
         // choose one to target
-        chosenCow = cows[Random.Range(0, cows.Length)];
+        chosenCow = cows[Random.Range(0, cows.Count)];
         while (chosenCow.IsCaptured()){
-            chosenCow = cows[Random.Range(0, cows.Length)];
+            chosenCow = cows[Random.Range(0, cows.Count)];
         }
 
         
@@ -31,7 +33,7 @@ public class Enemy4 : MonoBehaviour
     {
         if(!carryingCow){
             while (chosenCow.IsCaptured()){
-            chosenCow = cows[Random.Range(0, cows.Length)];
+            chosenCow = cows[Random.Range(0, cows.Count)];
             }
             transform.position = Vector2.MoveTowards(transform.position, chosenCow.transform.position, 0.001f);
         }
@@ -48,7 +50,7 @@ public class Enemy4 : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other){
-        if (other == chosenCow){
+        if (other.CompareTag("Cow")){
             chosenCow.Capture(transform, new Vector3(0,0,0));
             carryingCow = true;
         }

@@ -9,6 +9,8 @@ public class PlayerShooting : ControllableMonoBehaviour
     public float spawn_distance = 1;
     public float spawn_cooldown;
 
+    public int projectile_speed = 20;
+
     float time_since_shot = 999999.0f;
 
     void FixedUpdate()
@@ -24,7 +26,7 @@ public class PlayerShooting : ControllableMonoBehaviour
             time_since_shot = 0.0f;
             GameObject projectile = Instantiate(projectile_prefab) as GameObject;
             projectile.transform.position = transform.position + new Vector3(0, spawn_distance, 0);
-            projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 25);
+            projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectile_speed);
         }
     }
 }

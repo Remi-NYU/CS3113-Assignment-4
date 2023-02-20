@@ -287,8 +287,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950698205}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8648, y: -3.4552, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.8647995, y: -3.4552, z: 0}
   m_LocalScale: {x: 8.540458, y: 8.540458, z: 8.540458}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -322,8 +322,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile_prefab: {fileID: 1941526824736266785, guid: c12d9ea26f058fa408cf509dd59ff55d, type: 3}
-  spawn_distance: 1
+  spawn_distance: -5
   spawn_cooldown: 0.25
+  projectile_speed: 5
 --- !u!114 &1950698210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,11 +380,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 841317163489096734, guid: 79cf47d33fa920144a7def503e8db6d8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 7.924736
+      value: 7.9247355
       objectReference: {fileID: 0}
     - target: {fileID: 841317163489096734, guid: 79cf47d33fa920144a7def503e8db6d8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.77
+      value: -2.7699986
       objectReference: {fileID: 0}
     - target: {fileID: 841317163489096734, guid: 79cf47d33fa920144a7def503e8db6d8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -399,15 +400,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 841317163489096734, guid: 79cf47d33fa920144a7def503e8db6d8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 841317163489096734, guid: 79cf47d33fa920144a7def503e8db6d8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 841317163489096734, guid: 79cf47d33fa920144a7def503e8db6d8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 841317163489096734, guid: 79cf47d33fa920144a7def503e8db6d8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

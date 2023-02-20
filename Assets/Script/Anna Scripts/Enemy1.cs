@@ -30,6 +30,7 @@ public class Enemy1 : MonoBehaviour
             chosenCow = cows[Random.Range(0, cows.Length)];
         }
         stoppingPointY = transform.position.y - 2;
+        print(chosenCow.transform.position);
     }
 
 
@@ -72,6 +73,10 @@ public class Enemy1 : MonoBehaviour
             carryingCow = true;
         }
 
+    }
+
+    public void releaseCow(){
+        chosenCow.Release();
     }
 
 }

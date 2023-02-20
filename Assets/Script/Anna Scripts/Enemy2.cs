@@ -16,6 +16,8 @@ public class Enemy2 : MonoBehaviour
     private float timeRight = TIMER;
     private float timeLeft = TIMEL;
 
+    private Cow chosenCow;
+
 
     void Start()
     {
@@ -78,9 +80,14 @@ public class Enemy2 : MonoBehaviour
                 other.GetComponent<Cow>().Capture(transform, new Vector3(0,0,0));
                 carryingCow = true;
                 status = 2;
+                chosenCow = other.GetComponent<Cow>();
             }
             
         }
 
+    }
+
+    public void releaseCow(){
+        chosenCow.Release();
     }
 }

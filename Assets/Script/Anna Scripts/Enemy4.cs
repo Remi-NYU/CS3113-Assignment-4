@@ -54,4 +54,8 @@ public class Enemy4 : MonoBehaviour
         }
 
     }
+
+    public void releaseCow(){
+        chosenCow.Release();
+    }
 }

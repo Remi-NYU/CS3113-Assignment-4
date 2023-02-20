@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealthSystem : MonoBehaviour
 {
     public int health = 3;
+    public int enenmyType = 1;
 
     // visual effects
     // public GameObject explosion;
@@ -33,6 +34,19 @@ public class EnemyHealthSystem : MonoBehaviour
             
             if (health <= 0){
                 //Instantiate(explosion, transform.position, Quaternion.identity);
+                if (enenmyType == 1){
+                    GetComponent<Enemy1>().releaseCow();
+                }
+                else if (enenmyType == 2){
+                    GetComponent<Enemy2>().releaseCow();
+                }
+                else if (enenmyType == 3){
+                    GetComponent<Enemy3>().releaseCow();
+                }
+                else{
+                    GetComponent<Enemy4>().releaseCow();
+                }
+                
                 Destroy(gameObject);
             }
             else{

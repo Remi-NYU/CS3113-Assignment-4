@@ -175,5 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef2c8f928b6545398422b5ae3cd4bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  enenmyType: 1
+  health: 1
+  enenmyType: 2
+  deathAnimation: {fileID: 2622387089578131715, guid: f9705522bcb4bda4bbfbb9873f17eceb, type: 3}

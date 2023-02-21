@@ -50,10 +50,5 @@ public class EnemySpawner1 : MonoBehaviour
         }
 
 
-
-
-
-
-
     }
 }

@@ -580,6 +580,7 @@ MonoBehaviour:
   projectile_prefab: {fileID: 1099634810595153751, guid: 8b5be0bd3cba48c46abea3513f1e4656, type: 3}
   spawn_distance: 1
   spawn_cooldown: 0.25
+  projectile_speed: 20
 --- !u!114 &765229448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1360,6 +1361,7 @@ MonoBehaviour:
   projectile_prefab: {fileID: 1099634810595153751, guid: 8b5be0bd3cba48c46abea3513f1e4656, type: 3}
   spawn_distance: 1
   spawn_cooldown: 0.25
+  projectile_speed: 20
 --- !u!114 &1729139800
 MonoBehaviour:
   m_ObjectHideFlags: 0

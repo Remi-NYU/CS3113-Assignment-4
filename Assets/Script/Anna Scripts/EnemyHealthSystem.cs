@@ -4,36 +4,26 @@ using UnityEngine;
 
 public class EnemyHealthSystem : MonoBehaviour
 {
-    public int health = 3;
+    public int health = 1;
     public int enenmyType = 1;
-
-    // visual effects
-    // public GameObject explosion;
-    // public GameObject damage;
-
-    // Audio
-    // public AudioClip enemyDamageSound;
-    // public AudioClip enemyDeathSound;
-    AudioSource _audioSource;
+    public GameObject deathAnimation;
+    
+    Rigidbody2D _rigidbody2D;
 
 
     void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
+        _rigidbody2D = GetComponent<Rigidbody2D>();
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     private void OnTriggerEnter2D(Collider2D other){
-        if (other.CompareTag("Bullet")){
+        if (other.CompareTag("Projectile")){
             health -= 1;
             
             if (health <= 0){
-                //Instantiate(explosion, transform.position, Quaternion.identity);
+                Instantiate(deathAnimation, transform.position, Quaternion.identity);
                 if (enenmyType == 1){
                     GetComponent<Enemy1>().releaseCow();
                 }
@@ -46,12 +36,7 @@ public class EnemyHealthSystem : MonoBehaviour
                 else{
                     GetComponent<Enemy4>().releaseCow();
                 }
-                
                 Destroy(gameObject);
-            }
-            else{
-                //Instantiate(damage, transform.position, Quaternion.identity);
-                //_audioSource.PlayOneShot(enemyDamageSound);
             }
             
         }

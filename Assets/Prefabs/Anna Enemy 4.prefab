@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6089502903121254088}
   - component: {fileID: 6089502903121254091}
   - component: {fileID: 6089502903121254090}
-  - component: {fileID: 6089502903121254093}
   - component: {fileID: 6089502903121254092}
+  - component: {fileID: -4412517961548198904}
   m_Layer: 0
   m_Name: Anna Enemy 4
   m_TagString: Untagged
@@ -153,18 +153,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6089502903121254093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6089502903121254087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccb0259480d234f5db90a8042352da9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6089502903121254092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,3 +168,15 @@ MonoBehaviour:
   health: 1
   enenmyType: 4
   deathAnimation: {fileID: 2622387089578131715, guid: f9705522bcb4bda4bbfbb9873f17eceb, type: 3}
+--- !u!114 &-4412517961548198904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6089502903121254087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 509f96c94b7d64f48b2727a30ae3a417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

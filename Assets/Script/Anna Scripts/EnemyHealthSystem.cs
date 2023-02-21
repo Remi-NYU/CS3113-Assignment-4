@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class EnemyHealthSystem : MonoBehaviour
 {
-    public int health = 3;
+    public int health = 1;
     public int enenmyType = 1;
     public GameObject deathAnimation;
     
-    //AudioSource _audioSource;
+    Rigidbody2D _rigidbody2D;
 
 
     void Start()
     {
-        //_audioSource = GetComponent<AudioSource>();
+        _rigidbody2D = GetComponent<Rigidbody2D>();
         
     }
 
-    // Update is called once per frame
     
     private void OnTriggerEnter2D(Collider2D other){
         if (other.CompareTag("Projectile")){
@@ -37,7 +36,6 @@ public class EnemyHealthSystem : MonoBehaviour
                 else{
                     GetComponent<Enemy4>().releaseCow();
                 }
-                
                 Destroy(gameObject);
             }
             

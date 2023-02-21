@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3445157783528850265}
   - component: {fileID: 7160026701473919271}
   - component: {fileID: 2986202363326325574}
-  - component: {fileID: 6530018244505794947}
   - component: {fileID: 5890462455778516038}
+  - component: {fileID: -8590775641321155582}
   m_Layer: 0
   m_Name: Anna Enemy 2
   m_TagString: Untagged
@@ -150,19 +150,6 @@ PolygonCollider2D:
       - {x: 0.35814476, y: -0.08600795}
       - {x: 0.22741815, y: 0.032614045}
       - {x: 0.16394883, y: 0.18185449}
---- !u!114 &6530018244505794947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5760752247316626620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 807d6445ed3e9481b91333fb1c9810b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  YBound: 0
 --- !u!114 &5890462455778516038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,3 +165,16 @@ MonoBehaviour:
   health: 1
   enenmyType: 2
   deathAnimation: {fileID: 2622387089578131715, guid: f9705522bcb4bda4bbfbb9873f17eceb, type: 3}
+--- !u!114 &-8590775641321155582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5760752247316626620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766d81a078a6f4006a138baf6011bdf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  YBound: -1.75

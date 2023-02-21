@@ -134,6 +134,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: vine
       objectReference: {fileID: 0}
+
     - target: {fileID: 5170942358753186843, guid: c12d9ea26f058fa408cf509dd59ff55d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -175,10 +176,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5170942358753186843, guid: c12d9ea26f058fa408cf509dd59ff55d, type: 3}
+
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+
   m_SourcePrefab: {fileID: 100100000, guid: c12d9ea26f058fa408cf509dd59ff55d, type: 3}
 --- !u!1 &1472190164 stripped
 GameObject:
@@ -211,6 +214,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.53, y: 0.29}
   m_EdgeRadius: 0
+
 --- !u!1 &1782834243
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 841317163489096734, guid: 79cf47d33fa920144a7def503e8db6d8, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 841317163489096734, guid: 79cf47d33fa920144a7def503e8db6d8, type: 3}
       propertyPath: m_LocalScale.x

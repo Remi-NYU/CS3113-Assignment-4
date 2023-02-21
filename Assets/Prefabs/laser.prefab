@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4489851735053277178}
   - component: {fileID: 7868973574717530428}
   - component: {fileID: 5523551080633214757}
-  - component: {fileID: 2617037574310543778}
+  - component: {fileID: 1822906046082848980}
   m_Layer: 0
   m_Name: laser
   m_TagString: Projectile
@@ -94,7 +94,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7223052988157842046}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -107,7 +107,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &2617037574310543778
+--- !u!61 &1822906046082848980
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

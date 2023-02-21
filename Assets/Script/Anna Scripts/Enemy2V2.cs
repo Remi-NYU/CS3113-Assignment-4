@@ -87,6 +87,9 @@ public class Enemy2V2 : MonoBehaviour
     }
 
     public void releaseCow(){
-        chosenCow.Release();
+        if(carryingCow){
+            chosenCow.Release();
+        }
+        
     }
 }

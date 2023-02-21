@@ -168,6 +168,7 @@ MonoBehaviour:
   health: 1
   enenmyType: 4
   deathAnimation: {fileID: 2622387089578131715, guid: f9705522bcb4bda4bbfbb9873f17eceb, type: 3}
+  speedUp: {fileID: 5134513290898040884, guid: 1b9fe9f33ad2e47bdb7ad2225dd730d4, type: 3}
 --- !u!114 &-4412517961548198904
 MonoBehaviour:
   m_ObjectHideFlags: 0

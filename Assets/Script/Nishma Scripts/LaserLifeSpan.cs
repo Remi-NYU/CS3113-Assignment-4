@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileLifeSpan : MonoBehaviour
+public class LaserLifeSpan : MonoBehaviour
 {
 
     // public GameObject explosion;

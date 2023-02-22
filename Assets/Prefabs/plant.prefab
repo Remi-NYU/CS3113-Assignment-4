@@ -167,7 +167,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!114 &7738842243746286075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,5 +182,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vinePrefab: {fileID: 1941526824736266785, guid: c12d9ea26f058fa408cf509dd59ff55d, type: 3}
   spawnPoint: {fileID: 2994687313054455482}
-  vineSpeed: 100
-  speed: 1

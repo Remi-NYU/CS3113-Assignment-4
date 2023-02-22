@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VinePlayerMove : MonoBehaviour
+public class VineProjectile : MonoBehaviour
 {
     private Vector2 target_up;
     private Vector2 position;
 
-    float time = 0.5f;
+    float time = 1.5f;
 
     void Start()
     {
-        target_up = new Vector2(this.transform.position.x, 2.0f);
+        target_up = new Vector2(this.transform.position.x, -0.9f);
         position = gameObject.transform.position;
 
     }

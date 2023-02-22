@@ -5,6 +5,7 @@ using UnityEngine;
 public class VineEnemyController : MonoBehaviour
 {
     VineEnemy vine_enemy;
+    AudioSource audio_source;
 
     // State
     string state = "down"; // down/hurt/up
@@ -22,10 +23,14 @@ public class VineEnemyController : MonoBehaviour
     public float time_to_recover = 5f; // How many seconds the enemy will stay still after being hurt
     int shots_taken = 0;
 
+    // Wait stuff
+    public float time_to_wait = 5;
+
 
     void Start()
     {
         vine_enemy = GetComponent<VineEnemy>();
+        audio_source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -42,6 +47,10 @@ public class VineEnemyController : MonoBehaviour
         else if (state == "hurt")
         {
             Hurting();
+        }
+        else if (state == "wait")
+        {
+            Waiting();
         }
     }
 
@@ -63,6 +72,11 @@ public class VineEnemyController : MonoBehaviour
             return;
         }
 
+        if (!captured_cow)
+        {
+            state = "wait";
+        }
+
         timer = 0;
         vine_enemy.SetPosition(vine_enemy.GetPosition() - 1);
     }
@@ -78,9 +92,23 @@ public class VineEnemyController : MonoBehaviour
         state = "down";
     }
 
+    void Waiting()
+    {
+        if (timer < time_to_wait)
+        {
+            return;
+        }
+
+        state = "down";
+    }
+
     public void GrabCow(Cow cow)
     {
         if (state == "hurt")
+        {
+            return;
+        }
+        if (captured_cow)
         {
             return;
         }
@@ -93,6 +121,8 @@ public class VineEnemyController : MonoBehaviour
 
     public void Hurt()
     {
+        audio_source.Play();
+
         vine_enemy.TriggerHurtAnimation();
         shots_taken++;
         if (shots_taken < shots_per_tile)

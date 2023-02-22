@@ -11,11 +11,6 @@ public class PlantPlayerShoot : MonoBehaviour
     // public AudioClip shootSnd;
     // AudioSource audio;
 
-    // // Start is called before the first frame update
-    // void Start()
-    // {
-        
-    // }
 
     // Update is called once per frame
     void Update()
@@ -29,16 +24,10 @@ public class PlantPlayerShoot : MonoBehaviour
             newVine.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, vineSpeed));    // move up
 
             // // IF VINE REACHES Y=0 COME BACK DOWN?
-            if(newVine.transform.position.y >= 1f) {
+            if(newVine.transform.position.y >= 0f) {
                 newVine.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, vineSpeed*-1));
             }
         }
     }
 
-    // private void OnTriggerEnter2D(Collider2D other) {
-    //     if(other.CompareTag("Enemy")) {
-    //         // IF VINE HITS SOMETHING (COLLIDES), COME BACK DOWN
-    //         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, vineSpeed*-1));
-    //     }
-    // }
 }

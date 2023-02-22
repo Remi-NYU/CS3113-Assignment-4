@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4063692614822439640}
   - component: {fileID: 5641293063064060472}
   - component: {fileID: 9049324846163125381}
-  - component: {fileID: 4921792245173216206}
   m_Layer: 0
   m_Name: vine
   m_TagString: Projectile
@@ -134,15 +133,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.60623264, y: 0.21401972}
   m_EdgeRadius: 0
---- !u!114 &4921792245173216206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941526824736266785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23aa167633b1cb242a318a785a106ccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

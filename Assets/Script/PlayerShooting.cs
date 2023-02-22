@@ -13,6 +13,9 @@ public class PlayerShooting : ControllableMonoBehaviour
 
     float time_since_shot = 999999.0f;
 
+    // public AudioClip shootSnd;
+    // AudioSource audio;
+
     void FixedUpdate()
     {
         time_since_shot += Time.deltaTime;

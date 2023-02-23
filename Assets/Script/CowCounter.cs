@@ -6,14 +6,8 @@ using UnityEngine.SceneManagement;
 public class CowCounter : MonoBehaviour
 {
     int cow_count = 0;
-    UIBarCowCount cow_counter_ui;
+    public UIBarCowCount cow_counter_ui;
     float timer = 0;
-
-
-    void Start()
-    {
-        cow_counter_ui = GameObject.FindGameObjectWithTag("UIBar").GetComponent<UIBarCowCount>();
-    }
 
     void OnTriggerEnter2D(Collider2D other)
     {

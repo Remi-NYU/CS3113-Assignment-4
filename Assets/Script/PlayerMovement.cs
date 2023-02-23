@@ -20,19 +20,22 @@ public class PlayerMovement : ControllableMonoBehaviour
         _rigidbody.velocity = direction * speed;
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PowerUp"))
+        {
+            // if player collides with power up, increase its speed
+            speed = speed * 1.2f;
+            Destroy(other.gameObject);
+        }
+    }
+
     public override void Deactivate()
     {
         base.Deactivate();
         if (_rigidbody)
         {
             _rigidbody.velocity = Vector2.zero;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("PowerUp")) {
-            // if player collides with power up, increase its speed
-            speed = speed * 1.2f;
         }
     }
 }

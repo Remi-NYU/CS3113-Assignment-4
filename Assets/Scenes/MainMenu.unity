@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d52760c51203bbc4fa063c2b2fb2ee1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level_name: remi_playground
+  level_name: Level 1
 --- !u!82 &802062067
 AudioSource:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ public class Enemy1V2 : MonoBehaviour
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        isLeft = (transform.position.x < 20);
+        isLeft = (transform.position.x < 5);
 
     }
 
@@ -49,7 +49,7 @@ public class Enemy1V2 : MonoBehaviour
             {
                 _rigidbody2D.velocity = new Vector2(0, -1f);
             }
-            isLeft = (transform.position.x < 20);
+            isLeft = (transform.position.x < 5);
         }
         else if (!carryingCow)
         {
@@ -102,7 +102,7 @@ public class Enemy1V2 : MonoBehaviour
                 other.GetComponent<Cow>().Capture(transform, new Vector3(0, 0, 0));
                 carryingCow = true;
                 chosenCow = other.GetComponent<Cow>();
-                isLeft = (transform.position.y < 20);
+                isLeft = (transform.position.y < 5);
             }
 
         }

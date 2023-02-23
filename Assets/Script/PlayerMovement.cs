@@ -5,12 +5,18 @@ using UnityEngine;
 public class PlayerMovement : ControllableMonoBehaviour
 {
 
-    public float speed = 3.0f;
+    public float speed = 1.0f;
+    public GameObject glowPrefab;
+    public Transform GlowSpawnPoint; 
 
     Rigidbody2D _rigidbody;
 
+
+
     void Start()
     {
+        GameObject glow = Instantiate(glowPrefab, GlowSpawnPoint.position, Quaternion.identity);
+
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -24,10 +30,21 @@ public class PlayerMovement : ControllableMonoBehaviour
     {
         if (other.gameObject.CompareTag("PowerUp"))
         {
-            // if player collides with power up, increase its speed
-            speed = speed * 1.2f;
+            // glow effect + increase speed
+            // // if player collides with power up, increase its speed
+
+            // GameObject glow = Instantiate(glowPrefab, GlowSpawnPoint.position, Quaternion.identity);
+            StartCoroutine(PowerUp());
             Destroy(other.gameObject);
+            
         }
+    }
+
+    IEnumerator PowerUp() {
+        // GameObject glow = Instantiate(glowPrefab, GlowSpawnPoint.position, Quaternion.identity);
+        speed = speed * 2f;
+        yield return new WaitForSeconds(5);
+        speed = speed / 2f;
     }
 
     public override void Deactivate()

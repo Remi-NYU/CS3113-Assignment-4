@@ -23,54 +23,69 @@ public class Enemy1V2 : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         isLeft = (transform.position.x < 20);
-        
+
     }
 
-    
+
     void FixedUpdate()
     {
-        if (transform.position.y <= lowerBound){
+        if (transform.position.y <= lowerBound)
+        {
             landed = true;
         }
-        if (!stopped){
-            if (transform.position.y <= stoppingPointY){
-                 _rigidbody2D.velocity = new Vector2(0, 0);
+        if (!stopped)
+        {
+            if (transform.position.y <= stoppingPointY)
+            {
+                _rigidbody2D.velocity = new Vector2(0, 0);
                 initialDelay -= Time.deltaTime;
-                if (initialDelay <= 0){
+                if (initialDelay <= 0)
+                {
                     stopped = true;
-                   
+
                 }
             }
-            else{
+            else
+            {
                 _rigidbody2D.velocity = new Vector2(0, -1f);
             }
             isLeft = (transform.position.x < 20);
         }
-        else if (!carryingCow){
-            if (transform.position.y > lowerBound && !landed){
-                if (isLeft){
-                _rigidbody2D.velocity = new Vector2(0.3f, -1f);
+        else if (!carryingCow)
+        {
+            if (transform.position.y > lowerBound && !landed)
+            {
+                if (isLeft)
+                {
+                    _rigidbody2D.velocity = new Vector2(0.3f, -1f);
 
                 }
-                else{
-                _rigidbody2D.velocity = new Vector2(-0.3f, -1f);
+                else
+                {
+                    _rigidbody2D.velocity = new Vector2(-0.3f, -1f);
                 }
             }
-            else{
-                if (isLeft){
-                _rigidbody2D.velocity = new Vector2(0.5f, 0);
+            else
+            {
+                if (isLeft)
+                {
+                    _rigidbody2D.velocity = new Vector2(0.5f, 0);
 
                 }
-                else{
-                _rigidbody2D.velocity = new Vector2(-0.5f, 0);
+                else
+                {
+                    _rigidbody2D.velocity = new Vector2(-0.5f, 0);
                 }
-            }       
+            }
         }
-        else {
-            if (isLeft){
+        else
+        {
+            if (isLeft)
+            {
                 _rigidbody2D.AddForce(new Vector2(-1f, 1f));
             }
-            else{
+            else
+            {
                 _rigidbody2D.AddForce(new Vector2(1f, 1f));
             }
         }
@@ -78,23 +93,28 @@ public class Enemy1V2 : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other){
-        if (other.CompareTag("Cow") && !carryingCow){
-            if (other.GetComponent<Cow>().IsCaptured() == false){
-                other.GetComponent<Cow>().Capture(transform, new Vector3(0,0,0));
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Cow") && !carryingCow)
+        {
+            if (other.GetComponent<Cow>().IsCaptured() == false)
+            {
+                other.GetComponent<Cow>().Capture(transform, new Vector3(0, 0, 0));
                 carryingCow = true;
                 chosenCow = other.GetComponent<Cow>();
                 isLeft = (transform.position.y < 20);
             }
-            
+
         }
 
     }
 
-    public void releaseCow(){
-        if(carryingCow){
+    public void releaseCow()
+    {
+        if (carryingCow)
+        {
             chosenCow.Release();
         }
-        
+
     }
 }

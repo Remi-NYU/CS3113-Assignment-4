@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - Cow
   - Laser
+  - PauseMenu
+  - PowerUp
+  - Glow
   layers:
   - Default
   - TransparentFX

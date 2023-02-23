@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CowCounter : MonoBehaviour
 {
     int cow_count = 0;
     UIBarCowCount cow_counter_ui;
+    float timer = 0;
 
 
     void Start()
@@ -32,5 +34,15 @@ public class CowCounter : MonoBehaviour
     void Update()
     {
         cow_counter_ui.SetCowCount(cow_count);
+
+        if (cow_count == 0)
+        {
+            timer += Time.deltaTime;
+
+            if (timer >= 3)
+            {
+                SceneManager.LoadScene("Lose Screen");
+            }
+        }
     }
 }

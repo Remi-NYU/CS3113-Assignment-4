@@ -6,18 +6,18 @@ public class PlayerMovement : ControllableMonoBehaviour
 {
 
     public float speed = 1.0f;
-    public GameObject glowPrefab;
-    public Transform GlowSpawnPoint; 
+    // public GameObject glowPrefab;
+    // public Transform GlowSpawnPoint; 
 
-    Rigidbody2D _rigidbody;
+    public Rigidbody2D _rigidbody;
 
-
+    public AudioClip itemSnd;
+    AudioSource audio;
 
     void Start()
     {
-        GameObject glow = Instantiate(glowPrefab, GlowSpawnPoint.position, Quaternion.identity);
-
         _rigidbody = GetComponent<Rigidbody2D>();
+        audio = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -30,10 +30,12 @@ public class PlayerMovement : ControllableMonoBehaviour
     {
         if (other.gameObject.CompareTag("PowerUp"))
         {
+            // play sound when collected
+            audio.PlayOneShot(itemSnd);
+
             // glow effect + increase speed
             // // if player collides with power up, increase its speed
 
-            // GameObject glow = Instantiate(glowPrefab, GlowSpawnPoint.position, Quaternion.identity);
             StartCoroutine(PowerUp());
             Destroy(other.gameObject);
             

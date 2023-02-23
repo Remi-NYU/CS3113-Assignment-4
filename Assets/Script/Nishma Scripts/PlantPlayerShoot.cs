@@ -11,22 +11,20 @@ public class PlantPlayerShoot : MonoBehaviour
     // public AudioClip shootSnd;
     // AudioSource audio;
 
+    // void Start() {
+    //     audio = GetComponent<AudioSource>();
+    // }
+
     // Update is called once per frame
     public void Update()
     {
 
         if(Input.GetButtonDown("Jump")) {  
-            Debug.Log("Jump");
             // when spacebar is pressed, spawn vine projectile up to certain distance and retract
 
             // audio.PlayOneShot(shootSnd);
 
             GameObject newVine = Instantiate(vinePrefab, spawnPoint.position, Quaternion.identity); //copies
-            // Debug.Log("y position: " + newVine.transform.position.y);
-
-            // newVine.GetComponent<Rigidbody2D>().AddForce(Vector2.up * vineSpeed);    // move up
-            // StartCoroutine(Down(newVine));
-            // newVine.GetComponent<Rigidbody2D>().AddForce(Vector2.down * vineSpeed);
 
         }
 

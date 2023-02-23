@@ -4,54 +4,44 @@ using UnityEngine;
 
 public class EnemyHealthSystem : MonoBehaviour
 {
-    public int health = 3;
+    public int health = 1;
     public int enenmyType = 1;
-
-    // visual effects
-    // public GameObject explosion;
-    // public GameObject damage;
-
-    // Audio
-    // public AudioClip enemyDamageSound;
-    // public AudioClip enemyDeathSound;
-    AudioSource _audioSource;
+    public GameObject deathAnimation;
+    public GameObject speedUp;
+    
+    Rigidbody2D _rigidbody2D;
 
 
     void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
+        _rigidbody2D = GetComponent<Rigidbody2D>();
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     private void OnTriggerEnter2D(Collider2D other){
-        if (other.CompareTag("Bullet")){
+        float prob = Random.Range(1,100);
+        if (other.CompareTag("Projectile")){
             health -= 1;
-            
             if (health <= 0){
-                //Instantiate(explosion, transform.position, Quaternion.identity);
+                Instantiate(deathAnimation, transform.position, Quaternion.identity);
                 if (enenmyType == 1){
-                    GetComponent<Enemy1>().releaseCow();
+                    GetComponent<Enemy1V2>().releaseCow();
                 }
                 else if (enenmyType == 2){
-                    GetComponent<Enemy2>().releaseCow();
+                    GetComponent<Enemy2V2>().releaseCow();
                 }
                 else if (enenmyType == 3){
-                    GetComponent<Enemy3>().releaseCow();
+                    GetComponent<Enemy3V2>().releaseCow();
                 }
                 else{
-                    GetComponent<Enemy4>().releaseCow();
+                    GetComponent<Enemy4V2>().releaseCow();
                 }
-                
+                Instantiate(deathAnimation, transform.position, Quaternion.identity);
+                if (prob < 20){
+                    Instantiate(speedUp, transform.position, Quaternion.identity);
+                }
                 Destroy(gameObject);
-            }
-            else{
-                //Instantiate(damage, transform.position, Quaternion.identity);
-                //_audioSource.PlayOneShot(enemyDamageSound);
             }
             
         }

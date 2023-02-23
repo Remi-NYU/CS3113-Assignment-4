@@ -12,51 +12,42 @@ public class EnemySprawner3 : MonoBehaviour
     IEnumerator Start(){
         yield return new WaitForSeconds(3f);
 
-        for(int i = 0; i < 3; i++){
-            Vector2 spawnPos = new Vector2(-8, 1);
+        for(int i = 0; i < 2; i++){
+            Vector2 spawnPos = new Vector2(16.5f, -1.75f);
             Instantiate(enemy4PreFab, spawnPos, Quaternion.identity);
+            yield return new WaitForSeconds(1f);
+            Vector2 spawnPos2 = new Vector2(23.5f, -1.75f);
+            Instantiate(enemy4PreFab, spawnPos2, Quaternion.identity);
+            yield return new WaitForSeconds(2f);
+            Vector2 spawnPos3 = new Vector2(Random.Range(18,23), 4.5f);
+            Instantiate(enemy3PreFab, spawnPos3, Quaternion.identity);
             yield return new WaitForSeconds(5f);
 
         }
 
-        for(int i = 0; i < 4; i++){
-            Vector2 spawnPos = new Vector2(-8, Random.Range(3,5));
-            Instantiate(enemy2PreFab, spawnPos, Quaternion.identity);
-            yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2f);
 
-        }
-
-        yield return new WaitForSeconds(5f);
-
-        for(int i = 0; i < 5; i++){
-            Vector2 spawnPos = new Vector2(Random.Range(-8,8), 5);
-            Instantiate(enemy3PreFab, spawnPos, Quaternion.identity);
-            Vector2 spawnPos2 = new Vector2(Random.Range(-8,8), 5);
-            Instantiate(enemy3PreFab, spawnPos2, Quaternion.identity);
-            yield return new WaitForSeconds(7f);
-
-        }
-
-        yield return new WaitForSeconds(5f);
-
-        for(int i = -8; i < 9; i += 3){
-            Vector2 spawnPos = new Vector2(i, 5);
+        for(int i = 0; i < 3; i++){
+            Vector2 spawnPos = new Vector2(Random.Range(18,23), 4.5f);
+            Vector2 spawnPos2 = new Vector2(Random.Range(18,23), 4.5f);
             Instantiate(enemy1PreFab, spawnPos, Quaternion.identity);
+            yield return new WaitForSeconds(1f);
+            Instantiate(enemy3PreFab, spawnPos2, Quaternion.identity);
+            yield return new WaitForSeconds(3f);
 
-        } 
+        }
 
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(5f);
 
-        for(int i = -8; i < 9; i += 3){
-            Vector2 spawnPos = new Vector2(i, 5);
-            Instantiate(enemy3PreFab, spawnPos, Quaternion.identity);
+       for(int i = 0; i < 3; i++){
+            Vector2 spawnPos = new Vector2(16.5f, Random.Range(0,2f));
+            Instantiate(enemy2PreFab, spawnPos, Quaternion.identity);
+            yield return new WaitForSeconds(0.5f);
+            Vector2 spawnPos2 = new Vector2(Random.Range(18,23), 4.5f);
+            Instantiate(enemy3PreFab, spawnPos2, Quaternion.identity);
+            yield return new WaitForSeconds(3f);
 
-        } 
-
-
-
-
-
+        }
 
     }
 }

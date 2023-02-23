@@ -7,7 +7,7 @@ public class Enemy1 : MonoBehaviour
 
     // Pause time when initially entering
     public float initialDelay = 2f;
-    private float stoppingPointY;
+    private float stoppingPointY = 3.5f;
     private bool stopped = false;
 
     // cow related
@@ -31,8 +31,7 @@ public class Enemy1 : MonoBehaviour
         while (chosenCow.IsCaptured()){
             chosenCow = cows[Random.Range(0, cows.Count)];
         }
-        stoppingPointY = transform.position.y - 2;
-        print(chosenCow.transform.position);
+        //print(chosenCow.transform.position);
     }
 
 

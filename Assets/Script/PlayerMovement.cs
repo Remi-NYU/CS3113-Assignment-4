@@ -16,7 +16,7 @@ public class PlayerMovement : ControllableMonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 direction = new Vector2(Input.GetAxisRaw("Horizontal"), 0).normalized;
+        Vector2 direction = (new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))).normalized;
         _rigidbody.velocity = direction * speed;
     }
 
@@ -26,6 +26,13 @@ public class PlayerMovement : ControllableMonoBehaviour
         if (_rigidbody)
         {
             _rigidbody.velocity = Vector2.zero;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("PowerUp")) {
+            // if player collides with power up, increase its speed
+            speed = speed * 1.2f;
         }
     }
 }

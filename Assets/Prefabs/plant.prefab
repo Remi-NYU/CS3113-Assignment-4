@@ -112,7 +112,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 15e644b21a5fa534d8f6c85c0a284f27, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -188,7 +188,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vinePrefab: {fileID: 1941526824736266785, guid: c12d9ea26f058fa408cf509dd59ff55d, type: 3}
   spawnPoint: {fileID: 2994687313054455482}
-  shootSnd: {fileID: 0}
 --- !u!61 &3806233664597766099
 BoxCollider2D:
   m_ObjectHideFlags: 0

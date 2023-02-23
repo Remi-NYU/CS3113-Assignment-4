@@ -15,6 +15,9 @@ public class PlayerShooting : ControllableMonoBehaviour
 
     // public AudioClip shootSnd;
     // AudioSource audio;
+    // void Start() {
+    //     audio = GetComponent<AudioSource>();
+    // }
 
     void FixedUpdate()
     {

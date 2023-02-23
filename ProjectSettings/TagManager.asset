@@ -11,6 +11,7 @@ TagManager:
   - Laser
   - PauseMenu
   - PowerUp
+  - Glow
   layers:
   - Default
   - TransparentFX

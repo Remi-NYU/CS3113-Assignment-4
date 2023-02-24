@@ -7,6 +7,8 @@ public class Timer : MonoBehaviour
 {
     public float total_time = 60;
     public string next_level;
+    public GameObject win_notification;
+    public float win_timer_max = 3;
 
     float time_left;
     Transform mask_transform;
@@ -21,13 +23,17 @@ public class Timer : MonoBehaviour
     {
         time_left -= Time.deltaTime;
 
-        UpdateTimeDisplay();
-
         if (time_left > 0)
+        {
+            UpdateTimeDisplay();
+            return;
+        }
+        win_notification.SetActive(true);
+
+        if (time_left > -win_timer_max)
         {
             return;
         }
-        time_left = 0;
 
         Win();
     }

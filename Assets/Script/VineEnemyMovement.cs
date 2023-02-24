@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VineEnemy : MonoBehaviour
+public class VineEnemyMovement : MonoBehaviour
 {
     SpriteRenderer flower;
     Animator flower_animator;
@@ -27,8 +27,14 @@ public class VineEnemy : MonoBehaviour
     void UpdateFlower()
     {
         flower.transform.position = vine_segments[flower_position].transform.position;
-        flower.transform.rotation = flower_initial_rotation;
+        //flower.transform.rotation = flower_initial_rotation;
 
+        flower.transform.rotation = vine_segments[flower_position].transform.rotation;
+        if (flower.transform.eulerAngles.x == 180)
+        {
+            flower.transform.Rotate(new Vector3(-180, 0, 0));
+        }
+        /*
         if (flower_position % 6 == 1 && flower_position != 1)
         {
             flower.transform.Rotate(new Vector3(0, 0, -90));
@@ -37,6 +43,7 @@ public class VineEnemy : MonoBehaviour
         {
             flower.transform.Rotate(new Vector3(0, 0, -180));
         }
+        */
     }
 
     void UpdateVines()

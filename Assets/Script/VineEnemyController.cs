@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VineEnemyController : MonoBehaviour
 {
-    VineEnemy vine_enemy;
+    VineEnemyMovement vine_enemy;
     AudioSource audio_source;
 
     // State
@@ -29,7 +29,7 @@ public class VineEnemyController : MonoBehaviour
 
     void Start()
     {
-        vine_enemy = GetComponent<VineEnemy>();
+        vine_enemy = GetComponent<VineEnemyMovement>();
         audio_source = GetComponent<AudioSource>();
     }
 

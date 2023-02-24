@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 841317163489096739}
   - component: {fileID: 841317163489096738}
   - component: {fileID: 841317163489096737}
-  - component: {fileID: 1375820274210922411}
   - component: {fileID: 9026800871741969054}
   m_Layer: 0
   m_Name: spaceship
@@ -158,14 +157,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enabled_by_default: 1
   controlled_scripts: []
---- !u!81 &1375820274210922411
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 841317163489096732}
-  m_Enabled: 1
 --- !u!82 &9026800871741969054
 AudioSource:
   m_ObjectHideFlags: 0

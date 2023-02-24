@@ -47,7 +47,6 @@ GameObject:
   - component: {fileID: 7738842243746286075}
   - component: {fileID: 3806233664597766099}
   - component: {fileID: 8434029727128852978}
-  - component: {fileID: 4240477096269568092}
   m_Layer: 0
   m_Name: plant
   m_TagString: Player
@@ -311,16 +310,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!81 &4240477096269568092
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6670843239792793441}
-  m_Enabled: 1
---- !u!1001 &4997831158227112139
-PrefabInstance:
+--- !u!1 &7878257912836649457
+GameObject:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:

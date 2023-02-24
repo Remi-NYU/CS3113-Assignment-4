@@ -27,9 +27,22 @@ public class PlayerMovement : ControllableMonoBehaviour
         Vector2 direction = (new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))).normalized;
         _rigidbody.velocity = direction * speed;
 
+        Debug.Log(gameObject.transform.position.x);
+
+        if (gameObject.name == "Player - Spaceship") { // -8 to -2
+            if(transform.position.x > -2f) 
+                transform.position = new Vector2(-2f, transform.position.y);
+            if (transform.position.x <-8f)
+                transform.position = new Vector2(-8f, transform.position.y);
+        }
+        if (gameObject.name == "Player - Plant") { // 2 to 8
+            if(transform.position.x > 8f) 
+                transform.position = new Vector2(8f, transform.position.y);
+            if (transform.position.x < 2f)
+                transform.position = new Vector2(2f, transform.position.y);
+        }
+        
     }
-
-
 
 
     void OnTriggerEnter2D(Collider2D other)

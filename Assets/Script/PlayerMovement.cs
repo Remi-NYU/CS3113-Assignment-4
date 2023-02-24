@@ -6,13 +6,15 @@ public class PlayerMovement : ControllableMonoBehaviour
 {
 
     public float speed = 1.0f;
-    // public GameObject glowPrefab;
-    // public Transform GlowSpawnPoint; 
+    public GameObject glowPrefab;   // glow on player
 
     public Rigidbody2D _rigidbody;
 
-    public AudioClip itemSnd;
+
+
+    public AudioClip itemSnd;   // sound when collecting powerup
     AudioSource audio;
+
 
     void Start()
     {
@@ -24,7 +26,11 @@ public class PlayerMovement : ControllableMonoBehaviour
     {
         Vector2 direction = (new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))).normalized;
         _rigidbody.velocity = direction * speed;
+
     }
+
+
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -36,17 +42,18 @@ public class PlayerMovement : ControllableMonoBehaviour
             // glow effect + increase speed
             // // if player collides with power up, increase its speed
 
-            StartCoroutine(PowerUp());
-            Destroy(other.gameObject);
+            StartCoroutine(PowerUp());  // coroutine that changes speed + glow
+            Destroy(other.gameObject);  // destroy item
             
         }
     }
 
     IEnumerator PowerUp() {
-        // GameObject glow = Instantiate(glowPrefab, GlowSpawnPoint.position, Quaternion.identity);
-        speed = speed * 2f;
+        glowPrefab.GetComponent<Light>().color = new Color(0,255,0);    // change glow to green
+        speed = speed * 2f; // speed up
         yield return new WaitForSeconds(5);
-        speed = speed / 2f;
+        speed = speed / 2f; // revert speed
+        glowPrefab.GetComponent<Light>().color = new Color(255,255,255);    // change glow back to white
     }
 
     public override void Deactivate()

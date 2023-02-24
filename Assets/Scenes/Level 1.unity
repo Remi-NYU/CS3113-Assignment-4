@@ -337,6 +337,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arena Boundary
       objectReference: {fileID: 0}
+    - target: {fileID: 679547277118238545, guid: 25f0fb001861b9244a1e7196fdb6557e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25f0fb001861b9244a1e7196fdb6557e, type: 3}
 --- !u!4 &139640501 stripped
@@ -1944,6 +1948,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6670843239792793443, guid: 5d8e7194aea603644b4366a9deb8ecc7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7107554118202120573, guid: 5d8e7194aea603644b4366a9deb8ecc7, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

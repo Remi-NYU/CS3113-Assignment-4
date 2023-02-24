@@ -3,7 +3,9 @@ guid: 66ed89c986482704ba632f6a11865bcc
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - vinePrefab: {fileID: 1941526824736266785, guid: c12d9ea26f058fa408cf509dd59ff55d, type: 3}
+  - spawnPoint: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

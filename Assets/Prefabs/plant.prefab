@@ -330,6 +330,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Glow
       objectReference: {fileID: 0}
+    - target: {fileID: 2880269825342228912, guid: 8b8d128a66b845742b1b4215d5efbacc, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2880269825342228918, guid: 8b8d128a66b845742b1b4215d5efbacc, type: 3}
       propertyPath: m_RootOrder
       value: 1

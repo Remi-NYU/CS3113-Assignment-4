@@ -38,11 +38,12 @@ public class PlayerMovement : ControllableMonoBehaviour
 
             StartCoroutine(PowerUp());
             Destroy(other.gameObject);
-            
+
         }
     }
 
-    IEnumerator PowerUp() {
+    IEnumerator PowerUp()
+    {
         // GameObject glow = Instantiate(glowPrefab, GlowSpawnPoint.position, Quaternion.identity);
         speed = speed * 2f;
         yield return new WaitForSeconds(5);

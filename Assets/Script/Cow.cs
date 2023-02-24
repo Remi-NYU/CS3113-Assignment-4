@@ -17,6 +17,7 @@ public class Cow : MonoBehaviour
     Quaternion initial_rotation;
     float walking_interval = 5;
     float walking_timer = 0;
+    public float max_distance = 2f;
 
     // Capture stuff
     bool is_captured = false;
@@ -59,17 +60,31 @@ public class Cow : MonoBehaviour
         if (walking_timer >= walking_interval)
         {
             walking_timer = 0;
-            int rng = Random.Range(0, 3);
-            transform.rotation = initial_rotation;
-            if (rng == 1)
-            {
-                _rigidbody.MovePosition(transform.position + new Vector3(space_unit * 10, 0, 0));
-            }
-            else if (rng == 2)
-            {
-                transform.Rotate(new Vector3(0, 180, 0));
-                _rigidbody.MovePosition(transform.position + new Vector3(-space_unit * 10, 0, 0));
-            }
+            DoWalk();
+        }
+    }
+
+    void DoWalk()
+    {
+        int rng = Random.Range(0, 3);
+        if (transform.localPosition.x >= max_distance)
+        {
+            rng = 2;
+        }
+        else if (transform.localPosition.x <= -max_distance)
+        {
+            rng = 1;
+        }
+
+        transform.rotation = initial_rotation;
+        if (rng == 1)
+        {
+            _rigidbody.MovePosition(transform.position + new Vector3(space_unit * 10, 0, 0));
+        }
+        else if (rng == 2)
+        {
+            transform.Rotate(new Vector3(0, 180, 0));
+            _rigidbody.MovePosition(transform.position + new Vector3(-space_unit * 10, 0, 0));
         }
     }
 
